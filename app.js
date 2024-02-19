@@ -1,24 +1,6 @@
-// Global Variable
-var dogName = "Rufus";
+const text = document.querySelectorAll("h1")
+const submit = document.querySelectorAll ("btn btn-primary")
 
-var dogName = "Rosie";
-
-// Block Variable
-let g = 2;
-
-{
-    let g = 5;
-}
-
-// String Variable
-let Statement = "Dogs are adorable";
-
-// Object Variable
-const date = new Date();
-
-// Mathematics
-let a = 2;
-let b = a ** 5;
+h1.style.color = "blue";
 
 
-console.log(Statement);

@@ -4,12 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link href="main.css" type="text/css" rel="stylesheet">
 </head>
 <body>
-    <p id="demo"></p>
-  <script>
-    document.getElementById("demo").innerHTML= "Five Nights at Freddys";
-</script>  
-    <script src="./app.js" ></script>
+    <h1 class="title">Welcome</h1>
+    <form>
+    <div class="row">
+        <div class="col">
+          <input type="text" class="form-control" placeholder="First name" aria-label="First name">
+        </div>
+        <div class="col">
+          <input type="text" class="form-control" placeholder="Last name" aria-label="Last name">
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+    <script src="./app.js"></script>
+	
 </body>
 </html>
