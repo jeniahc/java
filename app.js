@@ -25,32 +25,49 @@ const myObject = {
     firstName:"Jeniah",
     lastName: "Clarke",
     fullName: function() {
-      return this.firstName + " " + this.lastName;
+      return "I will be your instructor for today. " + "My name is " + this.firstName + " " + this.lastName + ".";
     }
   }
+
   document.getElementById("myName").innerHTML = myObject.fullName(); 
 
 
-  function greet(name, greeting, message = `${greeting} ${name}`) {
-    return [name, greeting, message];
+const x = 34.276; 
+document.getElementById("number").onclick = function() {revealAnswers()}; 
+  function revealAnswers() {
+    document.getElementById("number").innerHTML =
+    x.toPrecision(4) + "<br>" +
+    x.toPrecision(3) + "<br>" +
+    x.toPrecision(2);
   }
+
+
+
+//my_element.addEventListener("click", function (e) {
+   // console.log(this.className); // logs the className of my_element
+   // console.log(e.currentTarget === this); // logs `true` });
+
+  function handleEvent(event) {
+    if (event.type === "fullscreenchange") {
+      /* handle a full screen toggle */
+    } else {
+      /* handle a full screen toggle error */
+    }
+  }
+
+  //function greet(name, greeting, message = `${greeting} ${name}`) {
+   // return [name, greeting, message]; }
   
-  greet("David", "Hi"); // ["David", "Hi", "Hi David"]
-  greet("David", "Hi", "Happy Birthday!"); // ["David", "Hi", "Happy Birthday!"]
-  
+  //greet("David", "Hi"); // ["David", "Hi", "Hi David"]
+  //greet("David", "Hi", "Happy Birthday!"); // ["David", "Hi", "Happy Birthday!"]
 
-  console.log()
+//const functionToBecalled = () => {
+  //  console.log("This is the function to be finally called!"); }
 
-const functionToBecalled = () => {
-    console.log("This is the function to be finally called!");
-}
+//const callingFunction = (functionToBeCalled) => {
+  //  functionToBeCalled(); }
 
-const callingFunction = (functionToBeCalled) => {
-    functionToBeCalled();
-}
+//const anotherFunction = () => {
+  //  console.log("This is the function to be finally called!"); }
 
-const anotherFunction = () => {
-    console.log("This is the function to be finally called!");
-}
-
-callingFunction(anotherFunction);
+//callingFunction(anotherFunction);
