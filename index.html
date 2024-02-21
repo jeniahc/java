@@ -3,22 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>JavaScript Practice</title>
     <link href="main.css" type="text/css" rel="stylesheet">
 </head>
 <body>
-    <h1 class="title">Welcome</h1>
-    <form>
+    <h1 class="title">Welcome to Class!</h1>
+    <button class="changeColor">Click Me</button>
+    
+    <h2 id="myName"></h2>
+
+    <button onclick="this.innerHTML=Date()">Date &amp; Time</button>
+
+    <h2 class="subtitle">Sign in here!</h2>
+
+    <ul class="name-list">
+        <li>Yolanda</li>
+        <li>Georgia</li>
+        <li>Taylor</li>
+    </ul>
     <div class="row">
         <div class="col">
-          <input type="text" class="form-control" placeholder="First name" aria-label="First name">
-        </div>
-        <div class="col">
-          <input type="text" class="form-control" placeholder="Last name" aria-label="Last name">
+          <input type="text" class="list-input" placeholder="First name" aria-label="First name">
         </div>
       </div>
-      <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
+      <button class="addListBtn">Submit</button>
+
+      
 
     <script src="./app.js"></script>
 	
