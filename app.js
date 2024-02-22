@@ -1,10 +1,12 @@
-const text = document.querySelector(".title");
+const classSchedule = ["Time to round up numbers!", "Fraction Time!", "World of Geometry"];
+
+console.log(classSchedule[0]);
+
+const title = document.querySelector(".title");
 const changeColor = document.querySelector (".changeColor");
 
-
-
 changeColor.addEventListener("click", function(){
-    text.classList.toggle("change");
+    title.classList.toggle("change");
 });
 
 const subtitle = document.querySelectorAll(".subtitle");
@@ -57,92 +59,86 @@ document.getElementById("answers").onclick = function() {revealAnswers()};
   }
 
 
-const questionA = document.querySelector(".questionA");
-const addAnsA = document.querySelector(".addAnsA");
-const answerA = document.querySelector(".answerA");
 
-addAnsA.addEventListener("click", function(){
+const submitA = document.getElementById("submitA");
+const answerA = document.getElementById("answerA");
+const ansAPopup = document.getElementById("ansAPopup");
+let ansA;
 
-  let ansAPopup;
+submitA.onclick = function(){
 
-if (answerA === 34.28) {
-  ansAPopup = "Correct";
+  ansA = answerA.value;
+  ansA = Number(ansA);
+  if (ansA === 34.28) {
+  ansAPopup.textContent = `Correct`;
   console.log("You are correct");
 } else {
-  ansAPopup = "Try Again";
+  ansAPopup.textContent = `Try Again`;
   console.log("Please try again");
+}}
+
+switch(ansA){
+  case 34.28:
+    console.log("Correct");
+    break;
+    default:
+    console.log("Please type in the answer for question 1.");
+    break;
 }
 
-const newH4 = document.createElement("H4");
-const h4Content = document.createTextNode(ansAPopup);
 
-newH4.appendChild(h4Content);
-questionA.appendChild(newH4);
+const submitB = document.getElementById("submitB");
+const answerB = document.getElementById("answerB");
+const ansBPopup = document.getElementById("ansBPopup");
+let ansB;
 
-});
+submitB.onclick = function(){
 
-
-
-const questionB = document.querySelector(".questionB");
-const answerB = document.querySelector(".answerB");
-const addAnsB = document.querySelector(".addAnsB");
-
-
-addAnsB.addEventListener("click", function(){
-
-let ansBPopup;
-if (answerB === 34.3) {
-  ansBPopup = "Correct";
+  ansB = answerB.value;
+  ansB = Number(ansB);
+  if (ansB === 34.3) {
+  ansBPopup.textContent = `Correct`;
+  console.log("You are correct");
 } else {
-  ansBPopup = "Try Again";
+  ansBPopup.textContent = `Try Again`;
+  console.log("Please try again");
+}}
+
+switch(ansB){
+  case 34.3:
+    console.log("Correct");
+    break;
+    default:
+    console.log("Please type in the answer for question 2.");
+    break;
 }
 
-  switch(answerB){
-    case 34.3:
+
+const submitC = document.getElementById("submitC");
+const answerC = document.getElementById("answerC");
+const ansCPopup = document.getElementById("ansCPopup");
+let ansC;
+
+submitC.onclick = function(){
+
+  ansC = answerC.value;
+  ansC = Number(ansC);
+  if (ansC === 34) {
+  ansCPopup.textContent = `Correct`;
+  console.log("You are correct");
+} else {
+  ansCPopup.textContent = `Try Again`;
+  console.log("Please try again");
+}}
+
+  switch(ansC){
+    case 34:
       console.log("Correct");
       break;
-      case 34.4:
-      console.log("Incorrect");
-      break;
       default:
-      console.log("Incorrect");
+      console.log("Please type in the answer for question 3.");
       break;
   }
-
-
-const newH4 = document.createElement("H4");
-const h4Content = document.createTextNode(ansBPopup);
-newH4.appendChild(h4Content);
-questionB.appendChild(newH4);
-
-});
-
-
-const questionC = document.querySelector(".questionC");
-const addAnsC = document.querySelector(".addAnsC");
-const answerC = document.querySelector(".answerC");
-
-
-addAnsC.addEventListener("click", function(){
-
-let ansCPopup;
-
-for (ansC of answerC.value) {
-  
-if (ansC === 34) {
-  ansCPopup = "Correct";
-} else {
-  ansCPopup = "Try Again";
-}}
-console.log(`${answerC.value}`);
-const newH4 = document.createElement("H4");
-const h4Content = document.createTextNode(ansCPopup);
-console.log(`${ansCPopup}!`);
-
-newH4.appendChild(h4Content);
-questionC.appendChild(newH4);
-});
-
 
 let congrats = "You did it!<br>";
 let result = congrats.repeat(4);
