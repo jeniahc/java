@@ -2,6 +2,7 @@ const text = document.querySelector(".title");
 const changeColor = document.querySelector (".changeColor");
 
 
+
 changeColor.addEventListener("click", function(){
     text.classList.toggle("change");
 });
@@ -13,8 +14,11 @@ const listInput = document.querySelector(".list-input");
 const addListBtn = document.querySelector(".addListBtn");
 
 addListBtn.addEventListener("click", function(){
+  //create an li
 const newLi = document.createElement('LI');
+  //add the input value inside of new li
 const liContent = document.createTextNode(listInput.value);
+  //attaching the li to the user list
 console.log(`Hello ${listInput.value}. How are you doing today?`);
 
 newLi.appendChild(liContent);
@@ -28,38 +32,106 @@ const myObject = {
       return "I will be your instructor for today. " + "My name is " + this.firstName + " " + this.lastName + ".";
     }
   }
-
   document.getElementById("myName").innerHTML = myObject.fullName(); 
 
 
 const x = 34.276; 
-document.getElementById("number").onclick = function() {revealAnswers()}; 
+document.getElementById("answers").onclick = function() {revealAnswers()}; 
   function revealAnswers() {
-    document.getElementById("number").innerHTML =
+    document.getElementById("answers").innerHTML =
     x.toPrecision(4) + "<br>" +
     x.toPrecision(3) + "<br>" +
     x.toPrecision(2);
   }
 
 
+const questionA = document.querySelector(".questionA");
+const addAnsA = document.querySelector(".addAnsA");
+const answerA = document.querySelector(".answerA");
 
-//my_element.addEventListener("click", function (e) {
-   // console.log(this.className); // logs the className of my_element
-   // console.log(e.currentTarget === this); // logs `true` });
+addAnsA.addEventListener("click", function(){
 
-  function handleEvent(event) {
-    if (event.type === "fullscreenchange") {
-      /* handle a full screen toggle */
-    } else {
-      /* handle a full screen toggle error */
-    }
+  let ansAPopup;
+if (answerA === 34.28) {
+  ansAPopup = "Correct";
+  console.log("You are correct");
+} else {
+  ansAPopup = "Try Again";
+  console.log("Please try again");
+}
+
+const newH4 = document.createElement("H4");
+const h4Content = document.createTextNode(ansAPopup);
+
+newH4.appendChild(h4Content);
+questionA.appendChild(newH4);
+
+});
+
+
+
+const questionB = document.querySelector(".questionB");
+const answerB = document.querySelector(".answerB");
+const addAnsB = document.querySelector(".addAnsB");
+
+
+addAnsB.addEventListener("click", function(){
+
+let ansBPopup;
+if (answerB === 34.3) {
+  ansBPopup = "Correct";
+} else {
+  ansBPopup = "Try Again";
+}
+
+  switch(answerB){
+    case 34.3:
+      console.log("Correct");
+      break;
+      case 34.4:
+      console.log("Incorrect");
+      break;
+      default:
+      console.log("Incorrect");
+      break;
   }
 
-  //function greet(name, greeting, message = `${greeting} ${name}`) {
-   // return [name, greeting, message]; }
-  
-  //greet("David", "Hi"); // ["David", "Hi", "Hi David"]
-  //greet("David", "Hi", "Happy Birthday!"); // ["David", "Hi", "Happy Birthday!"]
+
+const newH4 = document.createElement("H4");
+const h4Content = document.createTextNode(ansBPopup);
+newH4.appendChild(h4Content);
+questionB.appendChild(newH4);
+
+});
+
+
+const questionC = document.querySelector(".questionC");
+const addAnsC = document.querySelector(".addAnsC");
+const numberInputC = document.querySelector(".numberInputC");
+
+addAnsC.addEventListener("click", function(){
+
+let ansCPopup;
+if (numberInputC === 34) {
+  ansCPopup = "Correct";
+} else {
+  ansCPopup = "Try Again";
+}
+
+const newH4 = document.createElement("H4");
+const h4Content = document.createTextNode(ansCPopup);
+console.log(`Please ${ansCPopup}.`);
+
+newH4.appendChild(h4Content);
+questionC.appendChild(newH4);
+});
+
+
+let congrats = "You did it!<br>";
+let result = congrats.repeat(4);
+
+document.getElementById("success").innerHTML = result;
+
 
 //const functionToBecalled = () => {
   //  console.log("This is the function to be finally called!"); }
