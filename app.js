@@ -7,11 +7,23 @@ changeColor.addEventListener("click", function(){
     text.classList.toggle("change");
 });
 
-const subtitle = document.querySelector(".subtitle");
+const subtitle = document.querySelectorAll(".subtitle");
+
+for (sub of subtitle) {
+  sub.addEventListener("click", function(){
+    this.style.color = "yellow";
+  });
+}
 
 const userList = document.querySelector(".name-list"); 
 const listInput = document.querySelector(".list-input"); 
 const addListBtn = document.querySelector(".addListBtn");
+
+const names = ["Yolanda", "Georgia", "Taylor"];
+
+for (name of names) {
+  console.log(`Welome ${name}!`);
+}
 
 addListBtn.addEventListener("click", function(){
   //create an li
@@ -52,6 +64,7 @@ const answerA = document.querySelector(".answerA");
 addAnsA.addEventListener("click", function(){
 
   let ansAPopup;
+
 if (answerA === 34.28) {
   ansAPopup = "Correct";
   console.log("You are correct");
@@ -107,20 +120,24 @@ questionB.appendChild(newH4);
 
 const questionC = document.querySelector(".questionC");
 const addAnsC = document.querySelector(".addAnsC");
-const numberInputC = document.querySelector(".numberInputC");
+const answerC = document.querySelector(".answerC");
+
 
 addAnsC.addEventListener("click", function(){
 
 let ansCPopup;
-if (numberInputC === 34) {
+
+for (ansC of answerC.value) {
+  
+if (ansC === 34) {
   ansCPopup = "Correct";
 } else {
   ansCPopup = "Try Again";
-}
-
+}}
+console.log(`${answerC.value}`);
 const newH4 = document.createElement("H4");
 const h4Content = document.createTextNode(ansCPopup);
-console.log(`Please ${ansCPopup}.`);
+console.log(`${ansCPopup}!`);
 
 newH4.appendChild(h4Content);
 questionC.appendChild(newH4);
@@ -131,6 +148,14 @@ let congrats = "You did it!<br>";
 let result = congrats.repeat(4);
 
 document.getElementById("success").innerHTML = result;
+
+let grade = 0;
+
+while (grade < 100) {
+  console.log("A+ Grade!!");
+
+  grade++;
+}
 
 
 //const functionToBecalled = () => {
